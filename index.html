@@ -39,6 +39,9 @@
 </main>
 <script>
 const $ = id => document.getElementById(id), msg = t => $('msg').textContent = t;
+/* <link>#dashboard opens the event dashboard's review copy instead of the game */
+const NEXT = location.hash === '#dashboard' ? 'game/dashboard.html?review' : 'game/splash.html';
+if (NEXT !== 'game/splash.html') { $('go').textContent = 'Open the dashboard'; const a = $('out').querySelector('a'); a.href = NEXT; a.textContent = 'Open the dashboard'; }
 const b64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
 if (!('serviceWorker' in navigator) || !window.isSecureContext) { msg('This browser cannot open the demo here - it needs a current browser and an https link.'); $('go').disabled = true; }
 const reg = navigator.serviceWorker?.register('sw.js', { scope: './' });
@@ -67,7 +70,7 @@ $('f').onsubmit = async e => {
     catch { msg('That password is not right.'); $('go').disabled = false; $('pw').select(); return; }
     msg('Opening…');
     await ask(await worker(), { type: 'key', raw: bits }, 'key-ok');
-    location.href = 'game/splash.html';
+    location.href = NEXT;
   } catch (err) { msg('Could not open the demo: ' + err.message); $('go').disabled = false; }
 };
 </script>
