@@ -1,5 +1,8 @@
 # Clean Drop — demo
 
-Password-protected build of the game wall (present mode). Everything under `c/` is encrypted; the password is shared separately from the link.
+Password-protected builds; everything under `c/` is encrypted and each password is shared separately from its link.
 
-Built 23 Sept 2026 from `main` @ 0387937 + the event dashboard review copy (`<link>#dashboard`).
+- `/` — the game wall (present mode)
+- `/dashboard/` — the event dashboard, review copy (nothing is sent to any station)
+
+Built 23 Sept 2026 from the game repo `main` @ 0387937 + the dashboard review copy.
