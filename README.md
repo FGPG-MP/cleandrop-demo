@@ -6,7 +6,9 @@ Password-protected builds; everything under `c/` is encrypted and each password 
 - `/dashboard/` — the event dashboard, review copy (nothing is sent to any station)
 - `/trivia/` — the trivia kiosk, review mode (`trivia.html?demo`: no station; R shows the review bar). The film here is a web encode of Chevron's, unedited, to stay under GitHub's 100 MB file limit.
 
-Rebuilding the game at the root: rsync with `--exclude .git --exclude README.md --exclude dashboard --exclude trivia`, or `--delete` wipes the other two.
+- `/next/`, `/next/trivia/` — review builds, for FGPG's yes before they reach Chevron
 
-Built 16 Oct 2026 from the game repo `main` @ a8a79cd (the final logos, the NEXT-GEN lockup on the trivia kiosk, the logo on the sign-in page): the game in whack mode, the trivia kiosk with the web encode of the film, and the dashboard review copy. `brand.png` is the sign-in page's logo and ships unencrypted.
+Rebuilding the game at the root: rsync with `--exclude .git --exclude README.md --exclude dashboard --exclude trivia --exclude next`, or `--delete` wipes the others.
+
+Built 3 Nov 2026 from the game repo `main` @ 3bef6a9 (Chevron's 2 Nov notes): the game in whack mode, the trivia kiosk with the web encode of the film. The root and `/trivia/` are byte-identical copies of `/next/` and `/next/trivia/`, moved up on Nick's word. `/dashboard/` is still the 16 Oct build (`main` @ a8a79cd).
 
